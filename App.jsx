@@ -1,23 +1,9 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
 
-import AppBar from './src/components/AppBar';
-import Home from './src/components/Home';
+import HomeScreen from './src/screens/HomeScreen';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-
-      <AppBar />
-
-      <Home />
-    </View>
+    <HomeScreen />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F0F4F8',
-  },
-});
