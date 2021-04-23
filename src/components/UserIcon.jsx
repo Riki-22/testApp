@@ -6,7 +6,7 @@ import { string } from 'prop-types';
 export default function UserIcon(props) {
   const { name } = props;
   return (
-    <View style={styles.userIcon}>
+    <View style={styles.iconContainer}>
       <Feather name={name} size={24} color="black" />
     </View>
   );
@@ -17,14 +17,19 @@ UserIcon.propTypes = {
 };
 
 const styles = StyleSheet.create({
-  userIcon: {
+  iconContainer: {
     backgroundColor: 'white',
     borderRadius: 32,
     width: 64,
     height: 64,
     justifyContent: 'center',
     alignItems: 'center',
-    top: 24,
+    top: 8,
     left: 136,
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 8 },
+    shadowOpacity: 0.25,
+    shadowRadius: 8,
+    elevation: 8,
   },
 });

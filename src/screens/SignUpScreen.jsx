@@ -7,19 +7,20 @@ import AppBar from '../components/AppBar';
 import UserIcon from '../components/UserIcon';
 import Button from '../components/Button';
 
-export default function LogInScreen() {
+export default function SignUpScreen() {
   return (
     <View style={styles.container}>
       <AppBar />
       <View style={styles.inner}>
-        <UserIcon name="user" />
-        <Text style={styles.title}>ログイン</Text>
+        <UserIcon name="user-plus" />
+        <Text style={styles.title}>サインアップ</Text>
         <TextInput style={styles.input} value="メールアドレス" />
         <TextInput style={styles.input} value="パスワード" />
-        <Button label="ログイン" />
+        <TextInput style={styles.input} value="パスワード再入力" />
+        <Button label="登録" />
         <View style={styles.footer}>
-          <Text style={styles.footerText}>登録がお済みでない方は、</Text>
-          <Text style={styles.footerLink}>こちら</Text>
+          <Text style={styles.footerText}>登録済みの場合は、</Text>
+          <Text style={styles.footerLink}>ログイン</Text>
         </View>
       </View>
     </View>
