@@ -3,23 +3,37 @@ import {
   View, Text, TextInput, StyleSheet, TouchableOpacity,
 } from 'react-native';
 
-import AppBar from '../components/AppBar';
 import UserIcon from '../components/UserIcon';
 import Button from '../components/Button';
 
-export default function LogInScreen() {
+export default function LogInScreen(props) {
+  const { navigation } = props;
   return (
     <View style={styles.container}>
-      <AppBar />
       <View style={styles.inner}>
         <UserIcon name="user" />
         <Text style={styles.title}>ログイン</Text>
         <TextInput style={styles.input} value="メールアドレス" />
         <TextInput style={styles.input} value="パスワード" />
-        <Button label="ログイン" />
+        <Button
+          label="ログイン"
+          onPress={() => {
+            navigation.reset({
+              index: 0,
+              routes: [{ name: 'Home' }],
+            });
+          }}
+        />
         <View style={styles.footer}>
           <Text style={styles.footerText}>登録がお済みでない方は、</Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              navigation.reset({
+                index: 0,
+                routes: [{ name: 'SignUp' }],
+              });
+            }}
+          >
             <Text style={styles.footerLink}>こちら</Text>
           </TouchableOpacity>
         </View>
