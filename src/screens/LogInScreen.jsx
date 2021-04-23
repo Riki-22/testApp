@@ -2,18 +2,16 @@ import React from 'react';
 import {
   View, Text, TextInput, StyleSheet,
 } from 'react-native';
-import { Feather } from '@expo/vector-icons';
 
 import AppBar from '../components/AppBar';
+import UserIcon from '../components/UserIcon';
 
 export default function LogInScreen() {
   return (
     <View style={styles.container}>
       <AppBar />
       <View style={styles.inner}>
-        <View style={styles.userIcon}>
-          <Feather name="user" size={24} color="black" />
-        </View>
+        <UserIcon name="user" />
         <Text style={styles.title}>サインイン</Text>
         <TextInput style={styles.input} value="Email Address" />
         <TextInput style={styles.input} value="Password" />
@@ -37,16 +35,6 @@ const styles = StyleSheet.create({
   inner: {
     paddingHorizontal: 27,
     paddingVertical: 24,
-  },
-  userIcon: {
-    backgroundColor: 'white',
-    borderRadius: 32,
-    width: 64,
-    height: 64,
-    justifyContent: 'center',
-    alignItems: 'center',
-    top: 24,
-    left: 136,
   },
   title: {
     fontSize: 24,
