@@ -5,6 +5,7 @@ import {
 
 import AppBar from '../components/AppBar';
 import UserIcon from '../components/UserIcon';
+import Button from '../components/Button';
 
 export default function LogInScreen() {
   return (
@@ -12,12 +13,10 @@ export default function LogInScreen() {
       <AppBar />
       <View style={styles.inner}>
         <UserIcon name="user" />
-        <Text style={styles.title}>サインイン</Text>
+        <Text style={styles.title}>ログイン</Text>
         <TextInput style={styles.input} value="Email Address" />
         <TextInput style={styles.input} value="Password" />
-        <View style={styles.buttonContainer}>
-          <Text style={styles.buttonLabel}>送信</Text>
-        </View>
+        <Button label="送信" />
         <View style={styles.footer}>
           <Text style={styles.footerText}>登録がお済みでない方は、</Text>
           <Text style={styles.footerLink}>こちら</Text>
@@ -50,19 +49,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
     paddingHorizontal: 8,
     marginBottom: 16,
-  },
-  buttonContainer: {
-    backgroundColor: '#467FD3',
-    borderRadius: 4,
-    alignSelf: 'flex-start',
-    marginBottom: 24,
-  },
-  buttonLabel: {
-    fontSize: 16,
-    lineHeight: 32,
-    paddingVertical: 8,
-    paddingHorizontal: 32,
-    color: '#ffffff',
   },
   footerText: {
     fontSize: 14,
