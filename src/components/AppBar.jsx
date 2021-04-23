@@ -6,7 +6,7 @@ export default function AppBar() {
     <View style={styles.appbar}>
       <View style={styles.appbarInner}>
         <Text style={styles.appbarTitle}>KENAPP</Text>
-        <Text style={styles.appbarMenu}>MENU</Text>
+        {/* <Text style={styles.appbarMenu}>MENU</Text> */}
       </View>
     </View>
   );
