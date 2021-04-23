@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   View, Text, TextInput, StyleSheet, TouchableOpacity,
 } from 'react-native';
@@ -8,13 +8,31 @@ import Button from '../components/Button';
 
 export default function LogInScreen(props) {
   const { navigation } = props;
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   return (
     <View style={styles.container}>
       <View style={styles.inner}>
         <UserIcon name="user" />
         <Text style={styles.title}>ログイン</Text>
-        <TextInput style={styles.input} value="メールアドレス" />
-        <TextInput style={styles.input} value="パスワード" />
+        <TextInput
+          style={styles.input}
+          value={email}
+          onChangeText={(text) => { setEmail(text); }}
+          autoCapitalize="none"
+          keyboardType="email-address"
+          placeholder="メールアドレス"
+          textContentType="emailAddress"
+        />
+        <TextInput
+          style={styles.input}
+          value={password}
+          onChangeText={(text) => { setPassword(text); }}
+          autoCapitalize="none"
+          placeholder="パスワード"
+          secureTextEntry
+          textContentType="password"
+        />
         <Button
           label="ログイン"
           onPress={() => {
@@ -25,7 +43,7 @@ export default function LogInScreen(props) {
           }}
         />
         <View style={styles.footer}>
-          <Text style={styles.footerText}>登録がお済みでない方は、</Text>
+          <Text style={styles.footerText}>登録がお済みでない方はこちらから</Text>
           <TouchableOpacity
             onPress={() => {
               navigation.reset({
@@ -34,7 +52,7 @@ export default function LogInScreen(props) {
               });
             }}
           >
-            <Text style={styles.footerLink}>こちら</Text>
+            <Text style={styles.footerLink}>サインアップ</Text>
           </TouchableOpacity>
         </View>
       </View>
