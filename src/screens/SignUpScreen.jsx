@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  View, Text, TextInput, StyleSheet, TouchableOpacity,
+  View, Text, TextInput, StyleSheet, TouchableOpacity, Alert,
 } from 'react-native';
 import firebase from 'firebase';
 
@@ -18,11 +18,15 @@ export default function SignUpScreen(props) {
       .then((userCredential) => {
         const { user } = userCredential;
         console.log(user.uid);
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'Home' }],
+        });
+      })
+      .catch((error) => {
+        console.log(error.code, error.message);
+        Alert.alert(error.code);
       });
-    navigation.reset({
-      index: 0,
-      routes: [{ name: 'Home' }],
-    });
   }
 
   return (
@@ -61,7 +65,7 @@ export default function SignUpScreen(props) {
           onPress={handlePress}
         />
         <View style={styles.footer}>
-          <Text style={styles.footerText}>登録済みの方はこちらから</Text>
+          <Text style={styles.footerText}>登録がお済みの方はこちらから</Text>
           <TouchableOpacity
             onPress={() => {
               navigation.reset({
