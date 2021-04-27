@@ -17,7 +17,7 @@ export default function LogInScreen(props) {
       if (user) {
         navigation.reset({
           index: 0,
-          routes: [{ name: 'Home' }],
+          routes: [{ name: 'MainTab' }],
         });
       }
     });
@@ -31,7 +31,7 @@ export default function LogInScreen(props) {
         console.log(user.uid);
         navigation.reset({
           index: 0,
-          routes: [{ name: 'Home' }],
+          routes: [{ name: 'MainTab' }],
         });
       })
       .catch((error) => {
