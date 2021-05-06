@@ -1,16 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
-import LogOutButton from '../components/LogOutButton';
-
-export default function QAScreen(props) {
-  const { navigation } = props;
-  useEffect(() => {
-    navigation.setOptions({
-      headerRight: () => <LogOutButton />,
-    });
-  }, []);
-
+export default function QAScreen() {
   return (
     <View style={styles.container}>
       <View style={styles.homeContents}>
